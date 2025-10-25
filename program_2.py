@@ -22,13 +22,13 @@ def word_separator(sentence):
                 if sentence[count].islower():
                     first_letter = sentence[0]
                     sentence = sentence.replace(char, char.lower())
-                    sentence = sentence.replace(first_letter, first_letter.upper(), 1)
+                    # sentence = sentence.replace(first_letter, first_letter.upper(), 1)
                 elif sentence[count] == "'" or sentence[count].isupper():
                     pass
             else:
                 first_letter = sentence[0]
                 sentence = sentence.replace(char, char.lower())
-                sentence = sentence.replace(first_letter, first_letter.upper(), 1)
+                # sentence = sentence.replace(first_letter, first_letter.upper(), 1)
                 print(sentence)
             index += 2
         else:
