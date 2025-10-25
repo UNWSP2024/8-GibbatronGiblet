@@ -36,7 +36,7 @@ def word_separator(sentence):
     new_sentence = sentence
     return new_sentence
 
-sentence = "StopAndSmellTheRoses."
+sentence = "StopAndSmellTheRoses"
 
 new_sentence = word_separator(sentence)
 
