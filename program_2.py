@@ -8,16 +8,38 @@
 # Start your changes on line 13
 
 def word_separator(sentence):
+    index = 0
 
-    new_sentence = ""
-    #    Add your logic here
+    for char in sentence:
 
-    return new_sentence.strip()
+        if char.isupper() and index > 0:
+            processed_str = sentence[:index]  # exclusive ending
+            space_fodder = sentence[index - 1]
+            edit_str1 = sentence[index - 1:]
+            edit_str2 = edit_str1.replace(space_fodder, " ", 1)
+            sentence = processed_str + edit_str2
 
-# Example usage
+            if char == "I":
+                count = index + 1
 
-sentence = "StopAndSmellTheRoses"
+                if sentence[count].islower():
+                    sentence = sentence.replace(char, char.lower())
 
+                elif sentence[count] == "'" or sentence[count].isupper():
+                    pass
+            else:
+                sentence = sentence.replace(char, char.lower())
+            index += 2
+
+        else:
+            index += 1
+
+    new_sentence = sentence
+    return new_sentence
+
+sentence = input("Enter a sentence in camel case:").strip()
 new_sentence = word_separator(sentence)
-
 print(new_sentence)
+
+#This program was written by Logan Gibson on 10/24/25
+#Its name is "Camel Case Converter"
