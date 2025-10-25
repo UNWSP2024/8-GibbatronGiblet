@@ -17,7 +17,7 @@ def initials_generator(personsName):
     personsInitials = f'{first_initial}. {middle_initial}. {last_initial}.'
     return personsInitials.strip()
 
-personsName = input("Enter your first, middle, and last name:")
+personsName = "Logan Bryant Gibson"
 
 initials = initials_generator(personsName)
 
