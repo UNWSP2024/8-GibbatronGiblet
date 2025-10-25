@@ -16,21 +16,25 @@ def word_separator(sentence):
             edit_str1 = sentence[index - 1:]
             edit_str2 = edit_str1.replace(space_fodder, " ", 1)
             sentence = processed_str + edit_str2
+            print(sentence)
             if char == "I":
                 count = index + 1
                 if sentence[count].islower():
+                    first_letter = sentence[0]
                     sentence = sentence.replace(char, char.lower())
+                    sentence = sentence.replace(first_letter, first_letter.upper(), 1)
                 elif sentence[count] == "'" or sentence[count].isupper():
                     pass
             else:
+                first_letter = sentence[0]
                 sentence = sentence.replace(char, char.lower())
+                sentence = sentence.replace(first_letter, first_letter.upper(), 1)
+                print(sentence)
             index += 2
-            print(sentence)
         else:
             index += 1
 
-    first_letter = sentence[0]
-    sentence = sentence.replace(first_letter, first_letter.upper(), 1)
+
 
 
     new_sentence = sentence
