@@ -8,12 +8,20 @@
 def initials_generator(personsName):
 
     personsInitials = ""
-    #    Add your logic here
-
+    usable_name = personsName.strip()
+    middle_index = usable_name.find(' ') + 1
+    last_index = usable_name.find(' ', middle_index) + 1
+    first_initial = usable_name[0]
+    middle_initial = usable_name[middle_index]
+    last_initial = usable_name[last_index]
+    personsInitials = f'{first_initial}. {middle_initial}. {last_initial}.'
     return personsInitials.strip()
 
-personsName = input('Enter the users first, middle, and last name')
+personsName = "Logan Bryant Gibson"
 
 initials = initials_generator(personsName)
 
 print(initials)
+
+#This program was written by Logan Gibson on 10/23/25
+#Its name is "Get Someone's Initials"
